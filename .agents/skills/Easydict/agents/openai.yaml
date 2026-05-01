@@ -1,0 +1,6 @@
+interface:
+  display_name: "Easydict"
+  short_description: "Repo-specific patterns and workflows for Easydict"
+  default_prompt: "Use the Easydict repo skill to follow existing architecture, testing, and workflow conventions."
+policy:
+  allow_implicit_invocation: true
