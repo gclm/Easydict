@@ -1,0 +1,567 @@
+# Instincts generated from https://github.com/gclm/Easydict
+# Generated: 2026-05-01T14:30:03.716Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: Easydict-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/gclm/Easydict
+---
+
+# Easydict Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: perf, chore, fix, feat, refactor
+
+## Evidence
+
+- 100 commits analyzed
+- Detected conventional commit pattern
+- Examples: chore: add LICENSE, fix(UI): move assets app icon to a group will cause project icon not to dispaly
+
+---
+id: Easydict-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/gclm/Easydict
+---
+
+# Easydict Commit Length
+
+## Action
+
+Keep commit messages concise (~42 characters)
+
+## Evidence
+
+- Average commit message length: 42 chars
+- Based on 100 commits
+
+---
+id: Easydict-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/gclm/Easydict
+---
+
+# Easydict Naming Files
+
+## Action
+
+Use PascalCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: PascalCase
+
+---
+id: Easydict-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/gclm/Easydict
+---
+
+# Easydict Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: Easydict-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/gclm/Easydict
+---
+
+# Easydict Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: Easydict-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/gclm/Easydict
+---
+
+# Easydict Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: Easydict-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/gclm/Easydict
+---
+
+# Easydict Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~9x per month
+- Files: 
+
+---
+id: Easydict-workflow-refactoring
+trigger: "when refactoring code"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/gclm/Easydict
+---
+
+# Easydict Workflow Refactoring
+
+## Action
+
+Follow the refactoring workflow:
+1. Ensure tests pass before refactor
+2. Refactor code structure
+3. Verify tests still pass
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: src/**/*
+
+---
+id: Easydict-workflow-update-pod-dependencies
+trigger: "when doing update pod dependencies"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/gclm/Easydict
+---
+
+# Easydict Workflow Update Pod Dependencies
+
+## Action
+
+Follow the update-pod-dependencies workflow:
+1. Edit Podfile as needed
+2. Run `pod install` or `pod update` to update Podfile.lock, Pods/Manifest.lock, and Pods/Pods.xcodeproj/project.pbxproj
+3. Commit all changed Pod-related files
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: Podfile, Podfile.lock, Pods/Manifest.lock
+
+---
+id: Easydict-workflow-add-or-update-app-icons-assets
+trigger: "when doing add or update app icons assets"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/gclm/Easydict
+---
+
+# Easydict Workflow Add Or Update App Icons Assets
+
+## Action
+
+Follow the add-or-update-app-icons-assets workflow:
+1. Add or update images in OpenBob/Assets.xcassets/[icon-set]
+2. Update Contents.json in the relevant imageset
+3. Update OpenBob.xcodeproj/project.pbxproj to register new assets
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: OpenBob/Assets.xcassets/*/Contents.json, OpenBob/Assets.xcassets/*/*.png, OpenBob.xcodeproj/project.pbxproj
+
+---
+id: Easydict-workflow-feature-development-controller-and-view
+trigger: "when doing feature development controller and view"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/gclm/Easydict
+---
+
+# Easydict Workflow Feature Development Controller And View
+
+## Action
+
+Follow the feature-development-controller-and-view workflow:
+1. Create or update controller files in OpenBob/Feature/TranslateWindow/Easydict/Controller/*
+2. Create or update view files in OpenBob/Feature/TranslateWindow/Easydict/View/*
+3. Optionally update OpenBob.xcodeproj/project.pbxproj to register new files
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: OpenBob/Feature/TranslateWindow/Easydict/Controller/*.h, OpenBob/Feature/TranslateWindow/Easydict/Controller/*.m, OpenBob/Feature/TranslateWindow/Easydict/View/*.h
+
+---
+id: Easydict-workflow-refactor-or-rename-classes
+trigger: "when doing refactor or rename classes"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/gclm/Easydict
+---
+
+# Easydict Workflow Refactor Or Rename Classes
+
+## Action
+
+Follow the refactor-or-rename-classes workflow:
+1. Rename or move class files (.h/.m) in relevant directories
+2. Update references in other source files
+3. Update OpenBob.xcodeproj/project.pbxproj to reflect changes
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: OpenBob/Feature/TranslateWindow/Easydict/Controller/*.h, OpenBob/Feature/TranslateWindow/Easydict/Controller/*.m, OpenBob/Feature/TranslateWindow/Easydict/View/*.h
+
+---
+id: Easydict-workflow-improve-event-monitor-or-selection
+trigger: "when doing improve event monitor or selection"
+confidence: 0.75
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/gclm/Easydict
+---
+
+# Easydict Workflow Improve Event Monitor Or Selection
+
+## Action
+
+Follow the improve-event-monitor-or-selection workflow:
+1. Edit OpenBob/Feature/EventMonitor/EZEventMonitor.h and/or .m
+2. Edit related controller files (e.g., EZMiniWindowController.m)
+3. Test and commit changes
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~5x per month
+- Files: OpenBob/Feature/EventMonitor/EZEventMonitor.h, OpenBob/Feature/EventMonitor/EZEventMonitor.m, OpenBob/Feature/TranslateWindow/Easydict/Controller/EZMiniWindowController.m
+
+---
+id: easydict-instinct-file-naming
+trigger: "When creating or renaming a file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: gclm/Easydict
+---
+
+# Easydict Instinct File Naming
+
+## Action
+
+Use PascalCase for file names
+
+## Evidence
+
+- Pattern in files: OpenBob/Feature/TranslateWindow/Easydict/Controller/EZMiniWindowController.m
+
+---
+id: easydict-instinct-function-naming
+trigger: "When defining a function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: gclm/Easydict
+---
+
+# Easydict Instinct Function Naming
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in code: Swift functions in OpenBob/Feature/TranslateWindow/Easydict/Controller/*.m
+
+---
+id: easydict-instinct-class-naming
+trigger: "When defining a class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: gclm/Easydict
+---
+
+# Easydict Instinct Class Naming
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in files: EZEventMonitor.h, EZMiniWindowController.m
+
+---
+id: easydict-instinct-constant-naming
+trigger: "When defining a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: gclm/Easydict
+---
+
+# Easydict Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in files: OpenBob/EZConst.h
+
+---
+id: easydict-instinct-import-style
+trigger: "When importing modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: gclm/Easydict
+---
+
+# Easydict Instinct Import Style
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in code: Swift import statements in OpenBob/Feature/TranslateWindow/Easydict/Controller/*.m
+
+---
+id: easydict-instinct-export-style
+trigger: "When exporting modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: gclm/Easydict
+---
+
+# Easydict Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in code: Swift module definitions
+
+---
+id: easydict-instinct-git-commit-format
+trigger: "When making a git commit"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: gclm/Easydict
+---
+
+# Easydict Instinct Git Commit Format
+
+## Action
+
+Use conventional commit prefixes: perf, chore, fix, feat, refactor, style
+
+## Evidence
+
+- Seen in commit: 'fix(UI): move assets app icon...'
+- Pattern in commit history
+
+---
+id: easydict-instinct-git-commit-length
+trigger: "When writing a commit message"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: gclm/Easydict
+---
+
+# Easydict Instinct Git Commit Length
+
+## Action
+
+Keep commit messages concise (average ~42 characters)
+
+## Evidence
+
+- Pattern in commit history: averageLength 42
+
+---
+id: easydict-instinct-feature-development
+trigger: "When someone wants to add a new feature or UI component"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: gclm/Easydict
+---
+
+# Easydict Instinct Feature Development
+
+## Action
+
+Create or update controller and view files, optionally update OpenBob.xcodeproj/project.pbxproj
+
+## Evidence
+
+- Workflow: feature-development-controller-and-view
+- Example commits and files
+
+---
+id: easydict-instinct-update-pods
+trigger: "When someone wants to update or fix CocoaPods dependencies"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: gclm/Easydict
+---
+
+# Easydict Instinct Update Pods
+
+## Action
+
+Edit Podfile, run pod install/update, commit all changed Pod-related files
+
+## Evidence
+
+- Workflow: update-pod-dependencies
+- Example commits and files
+
+---
+id: easydict-instinct-update-assets
+trigger: "When someone wants to add new icons or update existing app icon/image assets"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: gclm/Easydict
+---
+
+# Easydict Instinct Update Assets
+
+## Action
+
+Add or update images in Assets.xcassets, update Contents.json, update project.pbxproj
+
+## Evidence
+
+- Workflow: add-or-update-app-icons-assets
+- Example commits and files
+
+---
+id: easydict-instinct-refactor-class
+trigger: "When someone wants to rename or reorganize classes and their files"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: gclm/Easydict
+---
+
+# Easydict Instinct Refactor Class
+
+## Action
+
+Rename/move class files, update references, update project.pbxproj
+
+## Evidence
+
+- Workflow: refactor-or-rename-classes
+- Example commits and files
+
+---
+id: easydict-instinct-improve-event-monitor
+trigger: "When someone wants to tweak or fix how text selection or event monitoring works"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: gclm/Easydict
+---
+
+# Easydict Instinct Improve Event Monitor
+
+## Action
+
+Edit EZEventMonitor and related controller files, test and commit changes
+
+## Evidence
+
+- Workflow: improve-event-monitor-or-selection
+- Example commits and files
+
+---
+id: easydict-instinct-testing-location
+trigger: "When adding or updating tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: gclm/Easydict
+---
+
+# Easydict Instinct Testing Location
+
+## Action
+
+Place test files in a separate directory from source files
+
+## Evidence
+
+- Pattern in architecture: testLocation is 'separate'
+
