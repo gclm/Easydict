@@ -12,8 +12,6 @@
 
 ## Agent 与仓库治理
 
-- [`agent-documentation-structure.md`](agent-documentation-structure.md)：Agent 文档入口、知识
-  分层和维护边界的设计理由。
 - [`external-agent-assets-management.md`](external-agent-assets-management.md)：外部 Skills、
   第三方 Skill 与项目专属 Skill 的版本治理理由。
 

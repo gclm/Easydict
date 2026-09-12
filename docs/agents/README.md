@@ -1,25 +1,11 @@
-# Agent 规则与仓库治理
+# Agent 文档与仓库治理
 
-本目录存放面向编码 Agent 的现行专题规则。根目录 [`AGENTS.md`](../../AGENTS.md) 是唯一任务
-入口；本文件统一说明文档生命周期、维护原则和外部 Skill 资产边界，不提供第二套路由。
-
-## 文档分层
-
-- `docs/agents/`：当前有效的 Agent 和贡献者工作流规则。
-- `docs/design-docs/`：产品与技术设计，以及需要长期维护的设计决策。
-- `docs/user-docs/`：公开的英文和中文文档。
-- `docs/exec-plans/`：执行模式下的多步骤工作计划，目录索引见
-  [`exec-plans/README.md`](../exec-plans/README.md)。
-- `docs/histories/`：执行模式下最终产生仓库文件差异的记录，目录索引见
-  [`histories/README.md`](../histories/README.md)。
-- `docs/references/`：反复使用的精选外部或跨仓库参考。
-
-历史、completed plan、参考资料和其中的示例命令是证据，不是当前执行指令。只有当前任务
-明确采用的内容才约束实施，并继续服从用户有效指令与现行专题规则。
+根目录 [`AGENTS.md`](../../AGENTS.md) 是唯一任务入口，`docs/agents/` 存放现行专题规则。
+design doc 记录长期设计，plan 记录执行过程，history 记录落地结果，reference 保存外部证据；
+这些历史材料只有被当前任务明确采用时才构成约束。
 
 ## Plan 与 History
 
-- 计划模式只在回复中输出方案，不创建或更新仓库文件。
 - 多步骤、跨模块或高风险的执行任务在 `docs/exec-plans/active/` 使用
   [`templates.md`](../exec-plans/templates.md)；完成后移动到 `completed/`。
 - 执行任务产生仓库差异时，在 `docs/histories/YYYY-MM/` 使用
@@ -48,8 +34,3 @@
 - `.claude/skills` 指向 `.agents/skills`，不是独立副本。
 - 同步后核对来源 tree、目录 hash、lock、项目专属 Skill 和符号链接，并运行风险匹配的静态检查
   与 Skill 测试。
-
-## 应用内置 Agent 文档
-
-应用内置 Agent 文档、运行时资源和后端契约使用各自权威来源，不因普通仓库 Agent 文档整理
-而移动或改写。运行时发布内容继续遵循其专属资源、工程和构建规则。

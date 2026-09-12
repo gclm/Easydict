@@ -43,8 +43,8 @@
   `// MARK:` 区分生命周期、状态、协议和私有 helper。
 - 除非确实需要类型级语义，否则避免 `static` 函数和变量；utility type 除外。
 - 优先使用 `for ... where`，而不是循环后的行内过滤。
-- 每个 class、struct、enum、protocol 和 actor 前添加类型级文档。核心类型保持 2–4 个简洁
-  句子、约 220–320 个英文字符；简单私有 helper 控制在 180 个字符以内。
+- 每个 class、struct、enum、protocol 和 actor 前添加与其复杂度相称的简洁英文类型文档，说明
+  职责和关键约束；不为简单私有 helper 规定固定长度。
 - 为不明显的函数和推理添加英文文档注释。
 ## 库与 API
 

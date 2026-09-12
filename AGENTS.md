@@ -22,12 +22,7 @@ Easydict 是一款 macOS 词典和翻译应用，支持查词、文本翻译、�
   `docs/agents/README.md`。
 - 产品代码、跨功能行为或模块边界：`docs/design-docs/application-architecture.md`。
 - 公共使用或贡献者文档：`docs/user-docs/en/` 或 `docs/user-docs/zh/`。
-- OpenAI API、ChatGPT Apps SDK、Codex 或相关开发工具：优先使用 OpenAI 开发者文档
-  MCP server；不可用时访问官方文档网页，并说明实际来源。
-- 应用内置 Agent 文档、运行时资源或后端契约：读取其自身权威来源及
-  `docs/agents/README.md` 中的边界。
 
 ## 项目默认值
 
 - GitHub Pull Request 默认合入 `dev`。
-- 关联 Issue 时不使用自动关闭语法，由维护者决定是否关闭。
