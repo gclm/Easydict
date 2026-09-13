@@ -6,8 +6,7 @@
   关键边界，优先更新现有用例。
 - 简单赋值、参数透传、不改变行为的重构、文档、注释和纯视觉调整通常不新增测试；不要为了
   测试简单实现而增加生产抽象、mock 或测试 hook。
-- 优先验证真实生产逻辑并先运行直接相关的检查；共享基础设施、依赖或风险扩大时再增加范围。
-- 相同内容、命令和环境的有效结果可以复用；相关内容或证据变化时重新验证。
+- 优先运行直接覆盖变更风险的检查；共享基础设施、依赖或影响范围不明确时再扩大测试范围。
 - 测试只修改已授权的测试与 fixture；不把未运行、失败或环境阻塞的检查写成通过。
 
 ## 测试目录与文件组织
@@ -36,29 +35,17 @@
 
 - 纯治理 Markdown、plan、history、注释，以及不进入 Xcode 构建图的脚本或配置，默认只运行相应
   静态检查。
-- Xcode 编译的生产源码发生实质变化时运行 `xcodebuild build`；覆盖同一内容和构建配置的测试
-  已包含相应编译时，不重复运行 build。
-- 工程/workspace、target、build setting、build phase、依赖、entitlement、Info.plist 或运行时资源
-  发生变化时，运行覆盖受影响配置的 `xcodebuild build`；如果同一配置已由后续要求的测试覆盖，
-  不重复运行 `build`。
+- 生产源码、工程/workspace、target、build setting、build phase、依赖、entitlement、Info.plist
+  或运行时资源发生实质变化时，运行覆盖受影响配置的 `xcodebuild build`。
 - 修复 bug、修改可测试行为或测试源码及其 target 引用时，运行覆盖相应行为、suite 或方法的
   `xcodebuild test`。
-
-`xcodebuild build` 只证明构建集成，不证明业务行为正确。`xcodebuild test` 会构建测试所需产物；
-在 workspace、scheme、destination、configuration 和 DerivedData 兼容时，成功的测试同时满足相应
-编译验证，不预先重复运行 `build`。只有测试动作未覆盖的 Release、Archive、签名或其他配置需要验证
-时，才追加对应构建。
-
-优先运行能覆盖风险的最小测试范围；共享基础设施、依赖升级、跨模块行为变化或影响范围不明确时，
-扩大到相关 suite，必要时运行完整测试 target。重复测试同一内容和配置时，可先运行
-`build-for-testing`，再使用 `test-without-building`；前者本身不构成测试通过证据。
-
-实现、构建配置或测试发生影响结论的变化时重新验证。不要针对同一个 workspace 和 DerivedData
-位置并发运行 `xcodebuild`。
-
-默认使用 Xcode 的 DerivedData。只有失败证据指向权限、缓存损坏或 runner 状态时，才使用显式
-临时 DerivedData 重试；普通源码、编译、链接或测试失败不能据此切换目录。报告 fallback，并只
-删除本任务创建且未被使用的临时目录。
+- `xcodebuild build` 只证明构建集成；`xcodebuild test` 会构建测试所需产物。相同配置的成功测试
+  已覆盖编译时不重复运行 build；测试未覆盖的 Release、Archive、签名或其他配置另行验证。
+- 重复运行兼容的测试时，可先使用 `build-for-testing`，再使用 `test-without-building`；前者本身
+  不构成测试通过证据。
+- 不要对同一 workspace 和 DerivedData 并发运行 `xcodebuild`。
+- 默认使用 Xcode 的 DerivedData。只有失败证据指向权限、缓存损坏或 runner 状态时，才使用显式
+  临时 DerivedData 重试；报告 fallback，并只删除本任务创建且未被使用的临时目录。
 
 ## 常用命令
 
