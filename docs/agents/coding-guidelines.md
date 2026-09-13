@@ -45,8 +45,7 @@
 
 ## 库与 API
 
-- 使用 SFSafeSymbols，不硬编码 SF Symbol 字符串；优先使用 `Image(systemSymbol:)` 和
-  `Label(systemSymbol:)`。
+- SF Symbols 使用 SFSafeSymbols 的类型安全 API，不硬编码名称。
 - SwiftUI 使用 `foregroundStyle`，不使用已弃用的 `foregroundColor`。
 - SwiftUI background 优先使用 trailing-closure 或专用 shape-style 重载。
 - 网络请求使用 Alamofire 的 async/await API。
