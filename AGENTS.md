@@ -1,7 +1,6 @@
 # AGENTS.md
 
-Easydict 是一款 macOS 词典和翻译应用，支持查词、文本翻译、划词翻译和 OCR
-截图翻译。
+Easydict 是一款 macOS 词典和翻译应用，支持查词、文本翻译、划词翻译和 OCR 截图翻译。
 
 `AGENTS.md` 是 Agent 的唯一任务入口；详细规则只在对应专题文档维护。
 
@@ -19,10 +18,8 @@ Easydict 是一款 macOS 词典和翻译应用，支持查词、文本翻译、�
 
 - 只读取当前任务需要的专题规则。
 - 构建、测试、工程文件与资源、Xcode 验证：`docs/agents/build-and-test.md`。
-- 跨语言代码质量、Swift、Objective-C、SwiftUI、API 和本地化：
-  `docs/agents/coding-guidelines.md`。
-- 文档分层、计划、history、参考资料、外部 Skills 和同步边界：
-  `docs/agents/README.md`。
+- 跨语言代码质量、Swift、Objective-C、SwiftUI、API 和本地化：`docs/agents/coding-guidelines.md`。
+- 文档分层、计划、history、参考资料、外部 Skills 和同步边界：`docs/agents/README.md`。
 - 产品代码、跨功能行为或模块边界：`docs/design-docs/application-architecture.md`。
 - 公共使用或贡献者文档：`docs/user-docs/en/` 或 `docs/user-docs/zh/`。
 

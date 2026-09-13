@@ -9,8 +9,7 @@
 
 ### 组织与命名
 
-- 按功能和明确职责组织代码；解析、UI、I/O、编排和验证混杂时，在当前任务范围内提取同级文件
-  或模块。
+- 按功能和明确职责组织代码；解析、UI、I/O、编排和验证混杂时，在当前任务范围内提取同级文件或模块。
 - 每个源码文件聚焦一个职责；文件或类型超过项目 lint 阈值时评估拆分。现有大文件不自动纳入
   当前任务范围。
 - 较长但职责单一的文件使用 section marker 组织生命周期、状态、命令处理、I/O、解析和恢复逻辑。
@@ -23,8 +22,7 @@
 
 - 为公开 API，以及职责、约束、副作用或实现原因不明显的模块、类型和函数添加必要文档；不注释
   明显 accessor 或薄 wrapper。
-- 注释说明代码本身无法表达的意图、约束或副作用，并随行为更新；格式遵循项目工具配置和相邻
-  代码风格。
+- 注释说明代码本身无法表达的意图、约束或副作用，并随行为更新；格式遵循项目工具配置和相邻代码风格。
 - 保留现有文件头；新文件遵循相邻文件模板，不使用 Agent 名称作为作者。
 
 ## 语言与迁移
@@ -33,9 +31,7 @@
 - 现有 Objective-C 允许必要的 bug 修复，不要求为局部修复先迁移。迁移只在任务范围内进行。
 - Swift 迁移进度见 [`swift-migration.md`](../exec-plans/active/swift-migration.md)。
 
-## Swift 实践
-
-### Swift 组织与实践
+## Swift 组织与实践
 
 - 每个 Swift 文件聚焦一个主要 class 或 struct；紧密耦合的 protocol、简单模型、私有 helper
   或直接支持主类型的 extension 可以同文件维护。
@@ -58,6 +54,5 @@
   并更新所有受影响的 locale。
 - 在 UI 和字符串 API 中优先直接使用静态 String Catalog key。
 - 不动态构建本地化 key，也不拼接本地化片段；本地化完整句子并传入运行时参数。
-- key 使用小写、点号分隔，并按 `<scope>.<category>.<subcategory>.<element>` 使用 snake_case
-  片段。
+- key 使用小写、点号分隔，并按 `<scope>.<category>.<subcategory>.<element>` 使用 snake_case 片段。
 - 公共贡献说明位于 `docs/user-docs/en/How-to-translate-Easydict.md` 及其中文对应文档。
