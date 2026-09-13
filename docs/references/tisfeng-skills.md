@@ -2,8 +2,8 @@
 
 - 核对日期：2026-09-13。
 - 来源：`https://github.com/tisfeng/skills`。
-- 采用版本：`v0.3.9`。
-- peeled commit：`f1636df32afad927723ea269e5d4b2544d7f26c9`。
+- 采用版本：`v0.4.0`。
+- peeled commit：`5c112937e098b14f0d3d63dc4e4691e541c48c88`。
 - Tag 签名状态：annotated、unsigned；核验时同时固定 tag 和 peeled commit。
 - Skills 安装器：`skills@1.5.25`。
 
@@ -16,9 +16,9 @@
 平台无关的 Skills。Easydict 随该决定移除 `.codex/agents/`、`.codex/agents-lock.json` 与
 `.codex/config.toml`，规划、审查和测试改由主 Agent 按 Skill 直接执行。
 
-`v0.3.8 → v0.3.9` 的实际 Skill 内容变化集中在 `review` 与 `review-pr`：审查增加实现方式评估，
-PR 快照把需求上下文拆成独立 fingerprint，并支持需求来源的差量刷新。其余四项内容未变化，
-lock 仍统一记录同一 ref；宿主规则继续只引用稳定入口，无需随本次升级修改。
+`v0.3.9 → v0.4.0` 为六个公开 Skill 增加统一 UI 元数据，缩短触发描述和根入口，并把提交、
+PR 审查及 worktree 集成的低频细节拆入 references。上游同时删除未调用 selector 的静态触发语料
+和重复实现细节测试，保留 Git 状态、PR 身份、证据漂移、分页与远程写入门禁等高风险覆盖。
 
 `code-simplifier` 同时包含 `electron-typescript.md` 与 `swift-xcode.md` 条件规则。Easydict
 不删减不适用的 Electron reference；具体任务只按 Skill 路由读取适用内容。
@@ -35,7 +35,7 @@ Skill 源码，不属于消费方安装内容。Easydict 继续使用 `--copy --
 
 ```bash
 npx -y skills@1.5.25 add \
-  https://github.com/tisfeng/skills/tree/v0.3.9 \
+  https://github.com/tisfeng/skills/tree/v0.4.0 \
   --skill code-simplifier git-commit review review-pr submit-pr worktree-rebase-merge \
   --agent codex --yes --copy --full-depth
 ```
@@ -49,8 +49,9 @@ npm 默认缓存可能包含 root-owned 文件并返回 `EPERM`；用独立的 `
 `submit-pr` 需要 Python 3.10 或更高版本；同一任务的 `plan` 与 `apply` 使用同一个已核验
 解释器，项目命令示例优先使用 Python 3.12。Easydict 的系统 `/usr/bin/python3` 3.9.6 不满足
 该要求，不通过本地修改受管脚本绕过运行时依赖。2026-09-13 使用 Python 3.12 运行
-`git-commit` 19 项、`review` 10 项、`review-pr` 101 项、`submit-pr` 38 项、
-`worktree-rebase-merge` 9 项测试，共 177 项通过。
+`git-commit` 13 项、`review` 7 项、`review-pr` 45 项、`submit-pr` 15 项、
+`worktree-rebase-merge` 6 项测试，共 86 项通过。上游另有 2 项仓库级格式校验测试，不属于安装器
+复制的 Skill 目录；本项目另行核对 frontmatter、`agents/openai.yaml` 和相对链接。
 
 ## 重新核对条件
 
