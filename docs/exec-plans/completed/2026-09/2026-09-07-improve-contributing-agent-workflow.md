@@ -45,7 +45,7 @@ README 中的 AI 辅助说明还固定推荐 `GPT-5.4`，容易过期。
 - 初始冲突：none
 - Agent-owned paths：`CONTRIBUTING.md`、`README.md`、`README_ZH.md`、
   `docs/exec-plans/active/2026-09-07-improve-contributing-agent-workflow.md`、
-  `docs/exec-plans/completed/2026-09-07-improve-contributing-agent-workflow.md`、
+  `docs/exec-plans/completed/2026-09/2026-09-07-improve-contributing-agent-workflow.md`、
   `docs/histories/2026-09/2026-09-07-improve-contributing-agent-workflow.md`
 
 ## 目标与非目标

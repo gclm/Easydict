@@ -55,7 +55,7 @@
 - Agent-owned paths：`changelog/`、`scripts/release/`、
   `.agents/skills/release-easydict/`、
   `docs/exec-plans/active/2026-09-07-changelog-release-notes.md`、
-  `docs/exec-plans/completed/2026-09-07-changelog-release-notes.md`、
+  `docs/exec-plans/completed/2026-09/2026-09-07-changelog-release-notes.md`、
   `docs/histories/2026-09/2026-09-07-changelog-release-notes.md`。
 
 ## 目标与非目标

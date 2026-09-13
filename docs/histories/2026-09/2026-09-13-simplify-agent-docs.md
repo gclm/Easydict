@@ -1,6 +1,6 @@
 ## 2026-09-13 | 任务：简化 Agent 文档与任务模式
 
-**Links:** [执行计划](../../exec-plans/completed/2026-09-13-simplify-agent-docs.md)
+**Links:** [执行计划](../../exec-plans/completed/2026-09/2026-09-13-simplify-agent-docs.md)
 
 ### 用户请求
 
@@ -35,7 +35,7 @@ Git 交付规则合并为只区分计划模式和执行模式的简洁文档。
 - `docs/agents/`
 - `docs/exec-plans/README.md`
 - `docs/exec-plans/templates.md`
-- `docs/exec-plans/completed/2026-09-13-simplify-agent-docs.md`
+- `docs/exec-plans/completed/2026-09/2026-09-13-simplify-agent-docs.md`
 - `docs/histories/README.md`
 - `docs/histories/2026-09/2026-09-13-simplify-agent-docs.md`
 - `docs/references/astra-agent-guidance.md`

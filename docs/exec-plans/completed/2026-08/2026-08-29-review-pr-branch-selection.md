@@ -5,7 +5,7 @@
 - 完成日期：2026-08-29
 - 负责人：Codex
 - 关联 Issue/PR：PR #1246（行为背景，不修改该 PR）
-- 同任务 history：[`2026-08-29-review-pr-branch-selection.md`](../../histories/2026-08-29-review-pr-branch-selection.md)
+- 同任务 history：[`2026-08-29-review-pr-branch-selection.md`](../../../histories/2026-08/2026-08-29-review-pr-branch-selection.md)
 
 ## 背景
 

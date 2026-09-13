@@ -1,6 +1,6 @@
 ## 2026-09-13 | 任务：进一步精简 Agent 文档
 
-**Links:** [执行计划](../../exec-plans/completed/2026-09-13-streamline-agent-docs.md)
+**Links:** [执行计划](../../exec-plans/completed/2026-09/2026-09-13-streamline-agent-docs.md)
 
 ### 用户请求
 
@@ -36,7 +36,7 @@
 - `docs/agents/`
 - `docs/design-docs/`
 - `docs/exec-plans/templates.md`
-- `docs/exec-plans/completed/2026-09-13-streamline-agent-docs.md`
+- `docs/exec-plans/completed/2026-09/2026-09-13-streamline-agent-docs.md`
 - `docs/histories/2026-09/2026-09-11-ocr-debug-window-dragging.md`
 - `docs/histories/2026-09/2026-09-13-streamline-agent-docs.md`
 - `docs/references/`

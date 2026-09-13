@@ -7,7 +7,8 @@ design doc 记录长期设计，plan 记录执行过程，history 记录落地�
 ## Plan 与 History
 
 - 多步骤、跨模块或高风险的执行任务在 `docs/exec-plans/active/` 使用
-  [`templates.md`](../exec-plans/templates.md)；完成后移动到 `completed/`。
+  [`templates.md`](../exec-plans/templates.md)；完成后按文件名月份移动到
+  `docs/exec-plans/completed/YYYY-MM/`。
 - 执行任务产生仓库差异时，在 `docs/histories/YYYY-MM/` 使用
   [`template.md`](../histories/template.md) 记录结果；没有差异时不创建空记录。
 - plan 与 history 使用 `YYYY-MM-DD-<slug>.md`，同一任务共享 slug 并跨轮复用；存在 plan 时，
